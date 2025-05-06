@@ -1,0 +1,10 @@
+<%=@tasks.id %>
+
+
+<h1><%=@tasks.title %></h1>
+<p><%=@tasks.details %><p>
+<p> task complete = <%=@tasks.completed %></p>
+<br>
+<br>
+<br>
+<%= link_to "back to tasks", tasks_path %>
