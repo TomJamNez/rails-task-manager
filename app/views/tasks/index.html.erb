@@ -3,12 +3,21 @@
 
   <% @tasks.each do |task| %>
   <div>
-    <%= task.completed%>
+    <% if task.completed == true %>
+    <%= raw('<i class="fa-regular fa-square-check"></i>') %>
+    <% else %>
+    <%= raw('<i class="fa-regular fa-square"></i>') %>
+    <% end %>
     <%= link_to task.title, task_path(task) %>
+    <%= link_to raw('<i class="fa-solid fa-trash"></i>'),
+      task_path(task),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+
   <% end %>
   </div>
-
-
   <br>
   <br>
   <%= link_to "create task", tasks_new_path%>
+  <br>
+  <br>
