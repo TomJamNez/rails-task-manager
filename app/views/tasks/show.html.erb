@@ -1,10 +1,11 @@
-<%=@tasks.id %>
+<%=@task.id %>
 
 
-<h1><%=@tasks.title %></h1>
-<p><%=@tasks.details %><p>
-<p> task complete = <%=@tasks.completed %></p>
+<h1><%=@task.title %></h1>
+<p><%=@task.details %><p>
+<p> task complete = <%=@task.completed %></p>
 <br>
 <br>
+<%= link_to "edit", edit_path %>
 <br>
 <%= link_to "back to tasks", tasks_path %>
